@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="wrap">
+        <div class="left_content">
+            <p>Username:<input type="text" id="username" name="username"></p>
+            <p>Email:<input type="text" id="email" name="email"></p>
+            <!-- <p>Email:<input type="text" id="email" name="email"></p> -->
+            <p><span>Male:<input type="radio" name="gender" value="Male"></span>
+                <span>Female:<input type="radio" name="gender" value="Female"></span></p>
+                <p>Skilled in:<select id="skill">
+                    <option>Html</option>
+                    <option>CSS</option>
+                    <option>JQuery</option>
+                </select></p>
+            <button>Submit</button>
+            <h3>User Information</h3><hr>
+            <div class="get_value">
+                <!-- <p id="username"></p> -->
+            </div>
+        </div>
+        <div class="right_content">
+           <p><input type="checkbox" id="theme"> Theme change</p> 
+           <p>text3:<input type="text" id="text3" name="" value=""></p>
+        </div>
+    </div>
+
+    <script>
+$(document).ready(function(){
+    //== input value display ==//
+  $("button").click(function(){
+   const username = $("#username").val();
+   const email = $("#email").val();
+   const gender = $("input[name='gender']:checked").val();
+   const skill = $('#skill :selected').text();
+   
+   //pass multiple input values to another input field
+   $("#text3").val([$("#username").val(), $("#email").val()])
+//    console.log(a,b);
+   $(".get_value").html(
+       `<p> Username:${username}</p>
+       <p> Email:${email}</p>
+       <p> Gender:${gender}</p>
+       <p> Skill:${skill}</p>`
+       );
+  });
+
+  //== div theme changed after checkbox clicked ==/
+
+  $("input[type=checkbox]").click(function(){
+        if($(this).is(":checked")){
+            $(".left_content").css('background-color', '#f6f7e6');
+         }
+         else{
+            $(".left_content").css('background-color', 'transparent');
+         }
+    });
+
+    // const a = $("#text3").val($("#username").val());
+    // console.log(a.val);
+
+});
+    </script>
+</body>
+</html>
