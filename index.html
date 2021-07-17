@@ -1,73 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
+
 <body>
     <div class="wrap">
         <div class="left_content">
-            <p>Username:<input type="text" id="username" name="username"></p>
-            <p>Email:<input type="text" id="email" name="email"></p>
+            <p>Username:<input type="text" id="username" name="username" /></p>
+            <p>Email:<input type="text" id="email" name="email" /></p>
             <!-- <p>Email:<input type="text" id="email" name="email"></p> -->
-            <p><span>Male:<input type="radio" name="gender" value="Male"></span>
-                <span>Female:<input type="radio" name="gender" value="Female"></span></p>
-                <p>Skilled in:<select id="skill">
+            <p>
+                <span>Male:<input type="radio" name="gender" value="Male" /></span>
+                <span>Female:<input type="radio" name="gender" value="Female" /></span>
+            </p>
+            <p>
+                Skilled in:<select id="skill">
                     <option>Html</option>
                     <option>CSS</option>
                     <option>JQuery</option>
-                </select></p>
+                </select>
+            </p>
             <button>Submit</button>
-            <h3>User Information</h3><hr>
+            <h3>User Information</h3>
+            <hr />
             <div class="get_value">
                 <!-- <p id="username"></p> -->
             </div>
         </div>
         <div class="right_content">
-           <p><input type="checkbox" id="theme"> Theme change</p> 
-           <p>text3:<input type="text" id="text3" name="" value=""></p>
+            <p><input type="checkbox" id="theme" /> Theme change</p>
+            <p>text3:<input type="text" id="text3" name="" value="" /></p>
+
+            <table class="table tbl_calc">
+                <thead>
+                  <tr>
+                    <th><input type="checkbox" id="checked_all" /> </th>
+                    <th>Name</th>
+                    <th>Unit</th>
+                    <th>Qty</th>
+                    <th>Total</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="mult_row">
+                    <td><input type="checkbox" id="" /></td>
+                    <td>pen</td>
+                    <td><input type="text" name="num_control" id="price"/></td>
+                    <td><input type="text" name="num_control" id="qty"/></td>
+                    <td><p id="total">0</p></td>
+                  </tr>
+                  <tr class="mult_row">
+                    <td><input type="checkbox" id="" /></td>
+                    <td>book</td>
+                    <td><input type="text" name="num_control" id="price"/></td>
+                    <td><input type="text" name="num_control" id="qty"/></td>
+                    <td><p id="total">0</p></td>
+                  </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="5">
+                            <div class="total_calc">
+                                <span><label>total:</label><label id="total_item">2 item</label> </span><span><label>total price:</label>
+                                    <label id="total_price">10000</label></span>
+                            </div>
+                        </td>
+                    </tr>
+                </tfoot>
+              </table>
         </div>
     </div>
 
-    <script>
-$(document).ready(function(){
-    //== input value display ==//
-  $("button").click(function(){
-   const username = $("#username").val();
-   const email = $("#email").val();
-   const gender = $("input[name='gender']:checked").val();
-   const skill = $('#skill :selected').text();
-   
-   //pass multiple input values to another input field
-   $("#text3").val([$("#username").val(), $("#email").val()])
-//    console.log(a,b);
-   $(".get_value").html(
-       `<p> Username:${username}</p>
-       <p> Email:${email}</p>
-       <p> Gender:${gender}</p>
-       <p> Skill:${skill}</p>`
-       );
-  });
-
-  //== div theme changed after checkbox clicked ==/
-
-  $("input[type=checkbox]").click(function(){
-        if($(this).is(":checked")){
-            $(".left_content").css('background-color', '#f6f7e6');
-         }
-         else{
-            $(".left_content").css('background-color', 'transparent');
-         }
-    });
-
-    // const a = $("#text3").val($("#username").val());
-    // console.log(a.val);
-
-});
-    </script>
+<script src="script.js"></script>
 </body>
+
 </html>

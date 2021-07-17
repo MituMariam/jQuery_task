@@ -9,3 +9,15 @@ h3{
     padding: 15px;
     box-shadow: 0px 3px 8px #b7b6b6;
 }
+table{
+    border-collapse: collapse;
+    border: 1px solid #333;
+}
+table th, table td{
+    border: 1px solid #333;
+    border-collapse: collapse;
+}
+.total_calc{
+    display: flex;
+    justify-content: space-between;
+}
