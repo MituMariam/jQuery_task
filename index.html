@@ -39,6 +39,7 @@
             <p><input type="checkbox" id="theme" /> Theme change</p>
             <p>text3:<input type="text" id="text3" name="" value="" /></p>
 
+            <h3>Calculate Table Data</h3>
             <table class="table tbl_calc">
                 <thead>
                   <tr>
@@ -64,13 +65,20 @@
                     <td><input type="text" name="num_control" id="qty"/></td>
                     <td><p id="total">0</p></td>
                   </tr>
+                  <tr class="mult_row">
+                    <td><input type="checkbox" id="" /></td>
+                    <td>marker</td>
+                    <td><input type="text" name="num_control" id="price"/></td>
+                    <td><input type="text" name="num_control" id="qty"/></td>
+                    <td><p id="total">0</p></td>
+                  </tr>
                 </tbody>
                 <tfoot>
                     <tr>
                         <td colspan="5">
                             <div class="total_calc">
-                                <span><label>total:</label><label id="total_item">2 item</label> </span><span><label>total price:</label>
-                                    <label id="total_price">10000</label></span>
+                                <span><label>total:</label><label id="total_item"></label></span><span><label>total price:</label>
+                                    <label id="total_price">0</label></span>
                             </div>
                         </td>
                     </tr>
