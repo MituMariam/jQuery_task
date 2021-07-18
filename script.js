@@ -39,7 +39,7 @@ $(document).ready(function () {
       const y = Number($("#qty", this).val());
       console.log(x, y);
       const row_total = x * y;
-      //total for the row
+      //total for each row
       $("#total", this).html(row_total);
 
       total += row_total;
@@ -49,4 +49,15 @@ $(document).ready(function () {
     $("#total_price").html(total);
     $("#total_item").html(totalQty);
   }
+
+  //cheked all input box
+  $('#checked_all').click(function () {    
+    $('.tbl_calc input:checkbox').prop('checked', this.checked);
+    // if ($("#select").is(":checked")) {
+    //     calcPrice();
+    // }else{
+    //     total -= row_total;
+    // }
+});
+
 });
