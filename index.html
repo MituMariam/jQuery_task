@@ -40,7 +40,7 @@
             <p>text3:<input type="text" id="text3" name="" value="" /></p>
 
             <h3>Calculate Table Data</h3>
-            <table class="table tbl_calc">
+            <table class="table" id="tbl_a">
                 <thead>
                   <tr>
                     <th><input type="checkbox" id="checked_all" /> </th>
@@ -52,33 +52,33 @@
                 </thead>
                 <tbody>
                   <tr class="mult_row">
-                    <td><input type="checkbox" id="select" /></td>
+                    <td><input type="checkbox"  class="row_check"/></td>
                     <td>pen</td>
-                    <td><input type="text" name="num_control" id="price"/></td>
-                    <td><input type="text" name="num_control" id="qty"/></td>
-                    <td><p id="total">0</p></td>
+                    <td><input type="text" class="price num_control"/></td>
+                    <td><input type="text" class="qty num_control"/></td>
+                    <td><input type="text" class="total_price" disabled/></td>
                   </tr>
                   <tr class="mult_row">
-                    <td><input type="checkbox" id="select" /></td>
+                    <td><input type="checkbox"  class="row_check"/></td>
                     <td>book</td>
-                    <td><input type="text" name="num_control" id="price"/></td>
-                    <td><input type="text" name="num_control" id="qty"/></td>
-                    <td><p id="total">0</p></td>
+                    <td><input type="text" class="price num_control"/></td>
+                    <td><input type="text" class="qty num_control"/></td>
+                    <td><input type="text" class="total_price" disabled/></td>
                   </tr>
                   <tr class="mult_row">
-                    <td><input type="checkbox" id="select" /></td>
+                    <td><input type="checkbox"  class="row_check"/></td>
                     <td>marker</td>
-                    <td><input type="text" name="num_control" id="price"/></td>
-                    <td><input type="text" name="num_control" id="qty"/></td>
-                    <td><p id="total">0</p></td>
+                    <td><input type="text" class="price num_control"/></td>
+                    <td><input type="text" class="qty num_control"/></td>
+                    <td><input type="text" class="total_price" disabled/></td>
                   </tr>
                 </tbody>
                 <tfoot>
                     <tr>
                         <td colspan="5">
                             <div class="total_calc">
-                                <span><label>total:</label><label id="total_item"></label></span><span><label>total price:</label>
-                                    <label id="total_price">0</label></span>
+                                <span><label>total Items:</label><label id="grand_total_item"></label></span><span><label>total price:</label>
+                                    <label id="grand_total_price">0</label></span>
                             </div>
                         </td>
                     </tr>
