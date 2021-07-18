@@ -27,6 +27,17 @@ $(document).ready(function () {
     }
   });
 
+
+   //Table data cheked all input box
+   $('#checked_all').click(function () {    
+    $('.tbl_calc input:checkbox').prop('checked', this.checked);
+    // if ($("#select").is(":checked")) {
+    //     calcPrice();
+    // }else{
+    //     total -= row_total;
+    // }
+});
+
   //== table data calculation ==/
 
   $("tr.mult_row input").keyup(calcPrice);
@@ -50,14 +61,5 @@ $(document).ready(function () {
     $("#total_item").html(totalQty);
   }
 
-  //cheked all input box
-  $('#checked_all').click(function () {    
-    $('.tbl_calc input:checkbox').prop('checked', this.checked);
-    // if ($("#select").is(":checked")) {
-    //     calcPrice();
-    // }else{
-    //     total -= row_total;
-    // }
-});
-
+ 
 });
