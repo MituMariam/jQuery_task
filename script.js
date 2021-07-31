@@ -21,12 +21,13 @@ $("button").click(function () {
 
 $("#theme").click(function () {
   if ($(this).is(":checked")) {
-    $(".left_content").css("background-color", "#f6f7e6");
+    $(".form").css("background-color", "#f6f7e6");
   } else {
-    $(".left_content").css("background-color", "transparent");
+    $(".form").css("background-color", "transparent");
   }
 });
 
+//== table data calculation ==/
 //Table data cheked all input box
 $("#checked_all").click(function () {
   $(".row_check").prop("checked", this.checked);
@@ -37,7 +38,7 @@ $(".row_check").click(function () {
   calculateGrandTotal();
 });
 
-//== table data calculation ==/
+
 
 $(".num_control").on('input',function(){
 calculateRowTotal(this);
@@ -87,3 +88,19 @@ function calculateGrandTotal() {
   $("#grand_total_price").html(totalPrice);
   $("#grand_total_item").html(totalQty);
 }
+
+//== jquery accordion ==/
+
+
+$(".heading").click(function () {
+  if($(this).hasClass('close')){
+    $(this).next().show();
+    $(this).removeClass('close');
+    $(this).addClass('open');
+  }else{
+    $(this).next().hide();
+    $(this).removeClass('open');
+    $(this).addClass('close');
+  }
+  console.log(this);
+});

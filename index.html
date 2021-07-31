@@ -2,92 +2,126 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css" />
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
 <body>
-    <div class="wrap">
-        <div class="left_content">
-            <p>Username:<input type="text" id="username" name="username" /></p>
-            <p>Email:<input type="text" id="email" name="email" /></p>
-            <!-- <p>Email:<input type="text" id="email" name="email"></p> -->
-            <p>
-                <span>Male:<input type="radio" name="gender" value="Male" /></span>
-                <span>Female:<input type="radio" name="gender" value="Female" /></span>
-            </p>
-            <p>
-                Skilled in:<select id="skill">
-                    <option>Html</option>
-                    <option>CSS</option>
-                    <option>JQuery</option>
-                </select>
-            </p>
-            <button>Submit</button>
-            <h3>User Information</h3>
-            <hr />
-            <div class="get_value">
-                <!-- <p id="username"></p> -->
-            </div>
+  <div class="wrap">
+    <div class="left_content">
+      <section class="form">
+        <p>Username:<input type="text" id="username" name="username" /></p>
+        <p>Email:<input type="text" id="email" name="email" /></p>
+        <!-- <p>Email:<input type="text" id="email" name="email"></p> -->
+        <p>
+          <span>Male:<input type="radio" name="gender" value="Male" /></span>
+          <span>Female:<input type="radio" name="gender" value="Female" /></span>
+        </p>
+        <p>
+          Skilled in:<select id="skill">
+            <option>Html</option>
+            <option>CSS</option>
+            <option>JQuery</option>
+          </select>
+        </p>
+        <button>Submit</button>
+        <h3>User Information</h3>
+        <hr />
+        <div class="get_value">
+          <!-- <p id="username"></p> -->
         </div>
-        <div class="right_content">
-            <p><input type="checkbox" id="theme" /> Theme change</p>
-            <p>text3:<input type="text" id="text3" name="" value="" /></p>
+      </section>
 
-            <h3>Calculate Table Data</h3>
-            <table class="table" id="tbl_a">
-                <thead>
-                  <tr>
-                    <th><input type="checkbox" id="checked_all" /> </th>
-                    <th>Name</th>
-                    <th>Unit</th>
-                    <th>Qty</th>
-                    <th>Total</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr class="mult_row">
-                    <td><input type="checkbox"  class="row_check"/></td>
-                    <td>pen</td>
-                    <td><input type="text" class="price num_control"/></td>
-                    <td><input type="text" class="qty num_control"/></td>
-                    <td><input type="text" class="total_price" disabled/></td>
-                  </tr>
-                  <tr class="mult_row">
-                    <td><input type="checkbox"  class="row_check"/></td>
-                    <td>book</td>
-                    <td><input type="text" class="price num_control"/></td>
-                    <td><input type="text" class="qty num_control"/></td>
-                    <td><input type="text" class="total_price" disabled/></td>
-                  </tr>
-                  <tr class="mult_row">
-                    <td><input type="checkbox"  class="row_check"/></td>
-                    <td>marker</td>
-                    <td><input type="text" class="price num_control"/></td>
-                    <td><input type="text" class="qty num_control"/></td>
-                    <td><input type="text" class="total_price" disabled/></td>
-                  </tr>
-                </tbody>
-                <tfoot>
-                    <tr>
-                        <td colspan="5">
-                            <div class="total_calc">
-                                <span><label>total Items:</label><label id="grand_total_item"></label></span><span><label>total price:</label>
-                                    <label id="grand_total_price">0</label></span>
-                            </div>
-                        </td>
-                    </tr>
-                </tfoot>
-              </table>
+
+      <section class="accordion">
+        <h3>Jquery Accordion</h3>
+        <div class="tab_card">
+          <h4 class="heading close">rice</h4>
+          <ul class="content">
+            <li>bashmoti </li>
+            <li>chinigura </li>
+          </ul>
         </div>
+        <div class="tab_card">
+          <h4 class="heading close">dal</h4>
+          <ul class="content">
+            <li>moog dal</li>
+            <li>mashkalai dal</li>
+            <li>kheshari dal</li>
+            <li>sola dal</li>
+          </ul>
+        </div>
+        <div class="tab_card">
+          <h4 class="heading close">potatoes</h4>
+          <ul class="content">
+            <li>Holand</li>
+          </ul>
+        </div>
+
+
+      </section>
     </div>
+    <div class="right_content">
+      <p><input type="checkbox" id="theme" /> Theme change</p>
+      <p>text3:<input type="text" id="text3" name="" value="" /></p>
 
-<script src="script.js"></script>
+      <h3>Calculate Table Data</h3>
+      <table class="table" id="tbl_a">
+        <thead>
+          <tr>
+            <th><input type="checkbox" id="checked_all" /> </th>
+            <th>Name</th>
+            <th>Unit</th>
+            <th>Qty</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="mult_row">
+            <td><input type="checkbox" class="row_check" /></td>
+            <td>pen</td>
+            <td><input type="text" class="price num_control" /></td>
+            <td><input type="text" class="qty num_control" /></td>
+            <td><input type="text" class="total_price" disabled /></td>
+          </tr>
+          <tr class="mult_row">
+            <td><input type="checkbox" class="row_check" /></td>
+            <td>book</td>
+            <td><input type="text" class="price num_control" /></td>
+            <td><input type="text" class="qty num_control" /></td>
+            <td><input type="text" class="total_price" disabled /></td>
+          </tr>
+          <tr class="mult_row">
+            <td><input type="checkbox" class="row_check" /></td>
+            <td>marker</td>
+            <td><input type="text" class="price num_control" /></td>
+            <td><input type="text" class="qty num_control" /></td>
+            <td><input type="text" class="total_price" disabled /></td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="5">
+              <div class="total_calc">
+                <span><label>total Items:</label><label id="grand_total_item"></label></span><span><label>total
+                    price:</label>
+                  <label id="grand_total_price">0</label></span>
+              </div>
+            </td>
+          </tr>
+        </tfoot>
+      </table>
+
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 
 </html>
