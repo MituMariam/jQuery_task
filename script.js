@@ -1,6 +1,6 @@
 $(document).ready(function () {});
 //== input value display ==//
-$("button").click(function () {
+$(".submit").click(function () {
   const username = $("#username").val();
   const email = $("#email").val();
   const gender = $("input[name='gender']:checked").val();
@@ -28,6 +28,7 @@ $("#theme").click(function () {
 });
 
 //== table data calculation ==/
+
 //Table data cheked all input box
 $("#checked_all").click(function () {
   $(".row_check").prop("checked", this.checked);
@@ -38,12 +39,9 @@ $(".row_check").click(function () {
   calculateGrandTotal();
 });
 
-
-
 $(".num_control").on('input',function(){
 calculateRowTotal(this);
 })
-
 
 function calcPrice() {
   let total = 0;
@@ -89,8 +87,39 @@ function calculateGrandTotal() {
   $("#grand_total_item").html(totalQty);
 }
 
-//== jquery accordion ==/
+//== add row function==/
 
+$(".add_row").click(function () {
+ 
+  const row = `<tr class="mult_row">
+  <td><input type="checkbox" class="row_check" /></td>
+  <td>marker</td>
+  <td><input type="text" class="price num_control" /></td>
+  <td><input type="text" class="qty num_control" /></td>
+  <td><input type="text" class="total_price" disabled /></td>
+</tr>`;
+$(".data_group").append(row);
+$(".num_control").on('input',function(){
+  calculateRowTotal(this);
+  })
+  $(".row_check").click(function () {
+    calculateGrandTotal();
+  });
+});
+ // Find and remove selected table rows
+ $(".delete_row").click(function () {
+ $("table .data_group").find('input.row_check').each(function(){
+  if ($(this).is(":checked")){
+    $(this).parents('tr').remove();
+    $(".row_check").prop("checked", false);
+    calculateGrandTotal();
+
+  }
+ })
+});
+
+
+//== jquery accordion ==/
 
 $(".heading").click(function () {
   if($(this).hasClass('close')){
